@@ -1,7 +1,7 @@
 const dropArea = document.getElementById("drop-area");
 const track = document.getElementById("track");
 const playButton = document.getElementById("play-button");
-const stopButton = document.getElementById("stop-button")
+const pauseButton = document.getElementById("pause-button")
 
 dropArea.addEventListener("dragover",(ev)=>{
     ev.preventDefault();
@@ -27,7 +27,7 @@ playButton.addEventListener("click",()=>{
     }
 });
 
-stopButton.addEventListener("click",()=>{
+pauseButton.addEventListener("click",()=>{
     if(track.readyState == 4){
         track.pause();
     }
