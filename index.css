@@ -1,51 +1,76 @@
-*{
+
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Geist Mono";
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgb(48, 46, 46);
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eae7e7;
 }
 
-.music-player{
-    width: 35rem;
-    background-color: #1d1d1e;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.music-player {
+  width: 35rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.drop-area{
+.drop-area {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 25rem;
-  border: #8a8e8a solid 1px;
+  border: #8a8e8a solid 2px;
   border-radius: 10px;
-  border-style:dashed;
+  border-style: dashed;
 }
 
-.drop-area h1 {
-  color: white;
+.drop-area h2 {
   font-style: italic;
   font-weight: 100;
 }
-
-.control-panel{
+.progress-container{
+  margin: 20px 0px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+progress{
+  height: 10px;
+  width: 90%;
+  border-radius: 5px;
+  border: black solid 1px;
+  background-color: white;
+}
+.song-title{
+  text-align: center;
+  margin: 20px 0px;
+  font-weight: 400;
+  padding: 0px;;
+  font-style: normal;
+}
+.control-panel {
   display: flex;
   justify-content: center;
-  margin: 25px 0px;
+  margin: 20px 0px;
 }
 
-.control-button{
-  background-color: white;
-  border:none;
-  border-radius:40px;
+.control-button {
+  display: block;
+  background-color:white;
+  border: none;
+  border-radius: 40px;
   cursor: pointer;
-  margin: 0px 5px;
 }
+
+.hide-icon {
+  display: none;
+}
+
