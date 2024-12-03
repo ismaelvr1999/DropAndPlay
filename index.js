@@ -6,6 +6,7 @@ const pauseIcon = document.getElementById("pause-icon");
 const playAndPauseBtn = document.getElementById("play-and-pause-button");
 const titleSong = document.getElementById("song-title");
 const progressBar = document.getElementById("progress-bar");
+const volumeInput = document.getElementById("volume");
 
 const resetButtonsStyles = ()=>{
     playIcon.classList.remove("hide-icon");
@@ -55,4 +56,6 @@ playAndPauseBtn.addEventListener("click", () => {
   } 
 });
 
-//TODO: Volumen Control
+volumeInput.addEventListener("change",(e)=>{
+  track.volume = e.target.value
+})
