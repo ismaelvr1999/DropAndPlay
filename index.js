@@ -7,6 +7,7 @@ const playAndPauseBtn = document.getElementById("play-and-pause-button");
 const titleSong = document.getElementById("song-title");
 const progressBar = document.getElementById("progress-bar");
 const volumeInput = document.getElementById("volume");
+const timer = document.getElementById("timer");
 
 const resetButtonsStyles = ()=>{
     playIcon.classList.remove("hide-icon");
@@ -17,11 +18,10 @@ const handlerDrop = (ev) => {
   ev.preventDefault();
   const trackFile = ev.dataTransfer.files[0];
   const urlFile = URL.createObjectURL(trackFile);
-
   titleSong.innerHTML = trackFile.name;
   track.setAttribute("src", urlFile);
-  resetButtonsStyles();
 
+  resetButtonsStyles();
 };
 dropArea.addEventListener("dragover", (ev) => {
   ev.preventDefault();
@@ -35,7 +35,17 @@ track.addEventListener("canplaythrough",(e)=>{
 
 track.addEventListener("timeupdate", (e) => {
   progressBar.value = track.currentTime;
+  let minutes = String(Math.trunc(track.currentTime / 60)).padStart(2,0);
+  let seconds = String(Math.trunc(track.currentTime) - (60*minutes)).padStart(2,0);
+  console.log(track.currentTime);
+  
+  timer.innerText = `${minutes}:${seconds}`;
 });
+
+track.addEventListener("ended",(e)=>{
+  resetButtonsStyles();
+  track.load();
+})
 
 playAndPauseBtn.addEventListener("click", () => {
   // Play
@@ -59,3 +69,4 @@ playAndPauseBtn.addEventListener("click", () => {
 volumeInput.addEventListener("change",(e)=>{
   track.volume = e.target.value
 })
+
